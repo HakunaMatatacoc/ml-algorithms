@@ -1,4 +1,4 @@
-package List;
+package list;
 
 /**
  * <h1>环形链表</h1>
