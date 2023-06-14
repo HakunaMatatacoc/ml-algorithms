@@ -14,8 +14,8 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] a = {5, 9, 7, 4, 1, 3, 2, 8};
-//        bubble(a);
-        bubble_v2(a);
+        bubble(a);
+//        bubble_v2(a);
     }
 
     // 未优化
