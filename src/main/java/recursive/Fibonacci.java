@@ -27,6 +27,20 @@ public class Fibonacci {
     }
 
     /**
+     * 斐波那契尾递归(推荐)
+     */
+    public static int tailfab(int pre, int res, int n){
+        if (n < 2)
+            return res; // 递归的终止条件
+        return tailfab(res, pre + res, n - 1);
+        /**
+         * n 是肯定有的
+         * res 上一次运算出来的结果
+         * pre 上上一次运算出来的结果
+         */
+    }
+
+    /**
      * 递归优化(加缓存)
      *
      * 用数组来做缓存, 时间复杂度下降至O(n), 空间复杂度也下降至O(n)
@@ -64,7 +78,7 @@ public class Fibonacci {
      */
     public static int tailFac(int n, int res){
         System.out.println(n + ":" + res);
-        if(n <= 1) return 1;
+        if(n <= 1) return res;
         return tailFac(n - 1, n * res);
     }
 
@@ -89,8 +103,11 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-        int i = tailFac(5, 1);
-        System.out.println(i); //1
+        int reault = tailfab(1, 1, 4);
+        System.out.println(reault);
+
+//        int i = tailFac(5, 1);
+//        System.out.println(i); //1
 
 //        for (int i = 0; i <= 45; i++) {
 //            long start = System.currentTimeMillis();
